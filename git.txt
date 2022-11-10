@@ -1,0 +1,35 @@
+exp 2: git version control
+
+git --version
+git config --global user.name "harshit"
+git config --global user.name "awasthiharshit2002@gmail.com"
+or edit using git config --global --edit
+mkdir litgit
+git init
+ls
+ls-a : shows .git files
+git status : tell changes or what has been added
+git status 
+git add h1.txt h2.txt h3.txt
+git status
+git commit -m "h1.txt to commit "
+git log
+ls
+git log --oneline
+git gui -> open branch master file in repositroy
+
+
+exp3 : github operation using repositories
+
+create a repository->name:devops3->public
+-add a readme file
+-create a repository
+-new branch : name:harshit-create branch
+-manage access -add people
+open cmd
+-git clone https://github.com/harshitawasthi70/devops3.git
+->create a new fork
+-name:devops34->copy the main branch only
+cmd:git remote -v (do this 2 times)
+-pull request merge
+
