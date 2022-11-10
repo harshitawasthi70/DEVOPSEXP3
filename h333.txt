@@ -1,0 +1,183 @@
+1. To build any Java Project (with and without parameters) using Jenkins
+● Without parameters -
+C:
+cd C:\Users\bello\OneDrive\Desktop\DOL Prac 4
+javac Hello.java
+java Hello
+
+Hello.java -
+public class Hello
+{
+public static void main(String args[])
+{
+System.out.println("hello world");
+}
+}
+
+● With parameters -
+C:
+cd C:\Users\bello\OneDrive\Desktop\DOL Prac 4
+javac Helloparameter.java
+java Helloparameter %str1% %str2%
+Helloparameter.java -
+public class Helloparameter
+{
+public static void main(String args[])
+{
+System.out.println("Your first-name is " + args[0]);
+System.out.println("Your last-name is " + args[1]);
+}
+}
+
+
+5. To implement windows batch command on a project in Jenkins
+(with and without parameters)
+● WITHOUT PARAMETERS
+echo "helloworld"
+● WITH PARAMETERS
+echo '%str1%'
+echo '%str2%'
+echo '%tomato%'
+echo '%food%
+
+6. To build any python project (python file and script) in Jenkins
+> Just install 3 plugins of Python
+Explicit
+C:
+cd C:\Users\bello\OneDrive\Desktop\DOL Prac 4
+python fact.py
+
+
+7. To build a Maven and Ant project in JenkinsFirst set maven and ant in global tools configuration
+MAVEN > maven project > git > Repo Url -
+https://github.com/be11o/maven-helloworld.git
+> build > clean compile package > apply > save > build now
+Verify creation of war file -
+cmd as administrator:dir C:ProgramData\Jenkins\.jenkins\.workspace\maven3\webapp\target\webapp.war
+----
+ANT > freestyle >git > Repo Url > build steps > invoke Ant > ant version - ant > Target -
+clean compile test package war > apply > save > build now
+Verify creation of .war file -
+Cmd as admin > paste path of roshambo.war using dir as prefix
+
+8. To create a pipeline script and build a pipeline of jobs in Jenkins
+Hello World pipeline script -
+Install all plugins beforehand related to pipeline > enter item name > select pipeline >
+advanced project options > Pipeline script > select Hello world from dropdown > save >
+apply > build now
+d34e256079d7
+
+Project with own pipeline script -
+
+Select project is parameterized > add string, choice, password > Pipeline > pipeline
+script >
+
+pipeline {
+agent any
+parameters {
+string(name: 'PERSON' , defaultValue: 'Chrissy', description: 'say hello')
+choice(name: 'CHOICE' , choices: ['1','2','3','4'], description: 'pick')
+password(name: 'PASSWORD' , defaultValue: '1234', description: 'enter pass')
+}
+stages {
+stage('name') {
+steps {
+echo "Hello ${params.PERSON}"
+}
+}
+stage('choice') {
+steps {
+echo "Choice ${params.CHOICE}"
+}
+}
+stage('password') {
+steps {
+echo "Password: ${params.PASSWORD}"
+}
+}
+}
+}
+
+Apply > save
+
+
+9. To create a Jenkinsfile and build a pipeline of jobs in Jenkins
+Using Git -
+enter item name > select pipeline > advanced project options > pipeline script from SCM
+> SCM > Git > repo url - https://github.com/be11o/jenkins-pipeline-tutorial.git > Script
+Path - hello-world/Jenkinsfile > apply > save
+
+10. In Jenkins, show changes in a project with the help of webhooks.
+Also show how builds can be scheduled with cron commands
+> Download ngrok first
+> Go to cmd in the folder where ngrok is present
+> type the following commands
+Ngrok.exe --version
+Ngrok.exe http 8080
+>copy Forwarding, uptil ngrok.io
+> Add webhook
+> new pipeline project > Build triggers > GitHub hook trigger for GITScm polling >
+Script Path > hello-world/Jenkinsfile
+Apply > save
+Forked repository> make changes in Jenkinsfile > commit changes > build now
+Add file to forked repository & build >
+Commit is visible
+Using cron commands - In repository
+H/5 * * * *
+> Initial Build now
+> After a few minutes
+
+12. To build an image for a web application using Dockerfile
+> Download Dockerfile from classroom exp 10 reference material
+> create a folder and move Dockerfile to this folder
+> create index.html here
+<html>
+<head>
+<title>Welcome Chrisanne</title>
+</head>
+<body>
+<h1>Welcome to my website</h1>
+<h2>Main Categories:</h2>
+<p>Pages (HTML)</p>
+<p>Style Sheets</p>
+<p>Computer Code(Javascript)</p>
+<p>Live Data</p>
+</body>
+</html>
+> edit Dockerfile
+FROM ubuntu:latest
+MAINTAINER "Chrisanne Rebello"
+RUN apt update -y
+RUN apt install nginx -y
+EXPOSE 80
+COPY index.html /usr/share/nginx/html/index.html
+COPY index.html /var/www/html/index.html
+CMD ["nginx","-g","daemon off;"]
+> in cmd
+> go to folder
+>docker –version
+>docker login
+> docker build -t kashyap_image .
+> docker run -it -p 8888:80 kashyap_image
+> go to browser & open localhost:8888
+Created image
+
+14. To create and run a test case on Chrome/Firefox browser with
+selenium
+IDE addon
+> search selenium IDE
+> add to chrome as extension
+> open selenium extension
+> create new project
+> set base url - https://www.google.com
+> start recording
+> stop recording
+> name the test
+> run test
+> test completed successfully
+To run test
+To start and stop recording
+Output successful -
+
+
+
