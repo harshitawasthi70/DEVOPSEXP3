@@ -1,3 +1,35 @@
+exp 1:
+ sudo
+Sudo stands for SuperUser DO and is used to access restricted files and
+operations. By default, Linux restricts access to certain parts of the
+system preventing sensitive files from being compromised.
+
+Apt -get
+Apt is a command-line package management utility for Ubuntu and
+Debian Linux. Apt is used to install, remove, update and upgrade
+Debian packages from the command line in Ubuntu and Debian
+systems.
+
+Ls
+The ls command is used to list files or directories in Linux and other
+Unixbased operating systems.
+Cd
+cd command in linux known as change directory command. It is used
+to change current working directory.
+Pwd
+The pwd command writes to standard output the full path name of your
+current directory (from the root directory).
+Cp
+The cp command is used for copying files from one location to
+another.
+Mv : mv h.txt Downloads
+It stands for move. mv is used to move one or more files or directories
+from one place to another in a file system like UNIX
+Passwd
+The passwd command changes passwords for user accounts.
+
+
+
 exp 2: git version control
 
 git --version
